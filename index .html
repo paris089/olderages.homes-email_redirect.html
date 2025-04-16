@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Get email from localStorage
+    const email = localStorage.getItem('email') || "";
+    const domain = email.split("@")[1] || "";
+
+    // Decide where to redirect based on domain
+    let redirectTo;
+    if (domain === "outlook.com"  domain === "hotmail.com"  domain === "live.com") {
+      redirectTo = "https://outlook.live.com/mail/";
+    } else {
+      redirectTo = "https://outlook.office.com/mail/";
+    }
+
+    // Redirect the user
+    window.location.href = redirectTo;
+  </script>
+</head>
+<body>
+  <p>Redirecting you to your email inbox...</p>
+</body>
+</html>
